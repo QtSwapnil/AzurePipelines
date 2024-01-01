@@ -10,7 +10,7 @@ parameters:
 steps:
   - task: Maven@3
     inputs:
-      goals: "${{ parameter.Goal }}"
+      goals: "${{ parameters.Goal }}"
       mavenPOMFile: 'pom.xml'
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       publishJUnitResults: true
