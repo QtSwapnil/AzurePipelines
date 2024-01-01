@@ -1,6 +1,6 @@
 parameters:
-  - name: Goal
-    displayName: Goal
+  - name: goal
+    displayName: goal
     type: string
     default: package
     values:
