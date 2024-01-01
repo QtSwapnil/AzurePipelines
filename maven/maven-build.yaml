@@ -1,0 +1,16 @@
+parameters:
+  - name: Goal
+    displayName: Goal
+    type: string
+    default: package
+    values:
+      - install
+      - package
+      - deploy
+steps:
+  - task: Maven@3
+    inputs:
+      goals: "${{ parameter.Goal }}"
+      mavenPOMFile: 'pom.xml'
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      publishJUnitResults: true
