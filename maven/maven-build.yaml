@@ -7,6 +7,15 @@ parameters:
       - install
       - package
       - deploy
+  - name: jdkversion
+    displayName: 'Java Version'
+    type: string
+    default: '1.11'
+  - name: pool
+    displayName: 'Pool name'
+    type: string
+    default: 'Test'
+
 steps:
   - task: Maven@3
     inputs:
@@ -14,3 +23,4 @@ steps:
       mavenPOMFile: 'pom.xml'
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       publishJUnitResults: true
+      jdkVersionOption: "${{ parameters.jdkversion }}"
