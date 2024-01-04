@@ -30,5 +30,5 @@ steps:
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: "${{ parameters.pathToPublish }}"
-      ArtifactName:
+      ArtifactName: 'drop'
       publishLocation: 'Container'
